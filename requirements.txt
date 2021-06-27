@@ -1,5 +1,4 @@
 pandas==1.2.4
-pywin32==301
 win10toast==0.9
 streamlit==0.83.0
 
