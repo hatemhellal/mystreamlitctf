@@ -6,7 +6,7 @@ Created on Tue May 25 13:06:59 2021
 """
 
 import streamlit as st
-import numpy as np
+
 from pandas.api.types import is_numeric_dtype
 import pandas as pd
 from datetime import date
