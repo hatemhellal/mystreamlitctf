@@ -1,5 +1,5 @@
 pandas==1.2.4
-pypiwin32==223
+pypiwin32
 win10toast==0.9
 streamlit==0.83.0
 
