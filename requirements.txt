@@ -1,4 +1,5 @@
 pandas==1.2.4
+dbus
 notify2
 streamlit==0.83.0
 
