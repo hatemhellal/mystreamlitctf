@@ -1,4 +1,5 @@
 pandas==1.2.4
+pywin32==301
 win10toast-click==0.1.2
 streamlit==0.83.0
 
