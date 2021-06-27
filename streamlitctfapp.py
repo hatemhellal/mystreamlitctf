@@ -11,7 +11,7 @@ import pandas as pd
 from datetime import date
 import base64
 
-from win10toast import ToastNotifier
+from win10toast_click import ToastNotifier 
 
 st.title("affaires ctf")
 st.header("Hatem Hellal")
