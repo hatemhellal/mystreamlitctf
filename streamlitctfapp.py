@@ -1,18 +1,19 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue May 25 13:06:59 2021
+
 @author: hatem
 """
 
 import streamlit as st
-
 from pandas.api.types import is_numeric_dtype
 import pandas as pd
 from datetime import date
 import base64
 
-from win10toast_click import ToastNotifier 
-
+#from win10toast_click import ToastNotifier 
+   
+import notify2
 st.title("affaires ctf")
 st.header("Hatem Hellal")
 
@@ -38,9 +39,15 @@ def get_table_download_link_csv(df):
     b64 = base64.b64encode(csv).decode()
     href = f'<a href="data:file/csv;base64,{b64}" download="affaires.csv" target="_blank">Download csv file</a>'
     return href
-def send(title,message):
-    notifier = ToastNotifier()
-    notifier.show_toast(title, message)
+#def send(title,message):
+   # notifier = ToastNotifier()
+
+
+def send(title, message):
+    notify2.init("Test")
+    notice = notify2.Notification(title, message)
+    notice.show()
+    return
 def filterdate(df,start,end):
     mask = (df["date de depart"] >= start) & (df["date d'expiration"] <= end)
     return df.loc[mask]
@@ -131,4 +138,13 @@ if st.sidebar.button("notify"):
         
 st.dataframe(df)
 st.markdown(get_table_download_link_csv(df), unsafe_allow_html=True)  
+
+
+           
+           
+          
+           
+           
+
+
 
