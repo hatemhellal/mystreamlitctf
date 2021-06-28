@@ -44,9 +44,9 @@ def send(subject, msg):
         server = smtplib.SMTP('smtp-mail.outlook.com',587)
         server.ehlo()
         server.starttls()
-        server.login("hatemhellal@hotmail.com", "Hatouma1998*")
+        server.login("faten_hellal@hotmail.fr", "neneoichietina00")
         message = 'Subject: {}\n\n{}'.format(subject, msg)
-        server.sendmail("hatemhellal@hotmail.com", "hatemhellal5@gmail.com", message)
+        server.sendmail("faten_hellal@hotmail.fr", "hatemhellal5@gmail.com", message)
         server.quit()
         print("Success: Email sent!")
     except:
