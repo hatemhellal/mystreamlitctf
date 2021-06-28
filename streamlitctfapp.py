@@ -58,10 +58,7 @@ def notify_me(tittle_my,messsage_my):
     message=messsage_my,  
 
 
-    app_icon=None, 
-
-
-    timeout=10)
+    app_icon=None)
 def filterdate(df,start,end):
     mask = (df["date de depart"] >= start) & (df["date d'expiration"] <= end)
     return df.loc[mask]
