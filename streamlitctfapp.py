@@ -10,10 +10,10 @@ from pandas.api.types import is_numeric_dtype
 import pandas as pd
 from datetime import date
 import base64
-
+from plyer import notification
 #from win10toast_click import ToastNotifier 
    
-import notify2
+
 st.title("affaires ctf")
 st.header("Hatem Hellal")
 
@@ -43,11 +43,25 @@ def get_table_download_link_csv(df):
    # notifier = ToastNotifier()
 
 
-def send(title, message):
-    notify2.init("Test")
-    notice = notify2.Notification(title, message)
-    notice.show()
-    return
+
+
+
+def notify_me(tittle_my,messsage_my):
+
+
+    notification.notify(
+
+
+    title=tittle_my, 
+
+
+    message=messsage_my,  
+
+
+    app_icon=None, 
+
+
+    timeout=10)
 def filterdate(df,start,end):
     mask = (df["date de depart"] >= start) & (df["date d'expiration"] <= end)
     return df.loc[mask]
@@ -133,7 +147,7 @@ if st.checkbox("filtrer"):
 if st.sidebar.button("notify"):
     for i in range(len(df["date d'expiration"])):
         if df["date d'expiration"][i]==date.today():
-            send('important',df["description"][i])
+            notify_me('important',df["description"][i])
                 
         
 st.dataframe(df)
