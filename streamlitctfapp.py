@@ -1,16 +1,10 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue May 25 13:06:59 2021
-
-@author: hatem
-"""
-
 import streamlit as st
 from pandas.api.types import is_numeric_dtype
 import pandas as pd
 from datetime import date
 import base64
-from plyer import notification 
+from mailer import Mailer
+
 #from win10toast_click import ToastNotifier 
    
 
@@ -42,18 +36,14 @@ def get_table_download_link_csv(df):
 #def send(title,message):
    # notifier = ToastNotifier()
 
+def send(subject,message):
+    mail = Mailer(email='hatemhellal@hotmail.com', password='Hatouma1998*')
+    mail.settings(provider=mail.MICROSOFT)
+    mail.send(receiver='faten_hellal@hotmail.fr', subject=subject, message=message)
 
 
 
 
-def notify(title,message):
-
-   
-  notification.notify(title= title,
-                    message= message,
-                    app_icon = None,
-                    timeout= 10,
-                    toast=False)
 def filterdate(df,start,end):
     mask = (df["date de depart"] >= start) & (df["date d'expiration"] <= end)
     return df.loc[mask]
@@ -139,7 +129,7 @@ if st.checkbox("filtrer"):
 if st.sidebar.button("notify"):
     for i in range(len(df["date d'expiration"])):
         if df["date d'expiration"][i]==date.today():
-            notify('important',df["description"][i])
+            send('important',df["description"][i])
                 
         
 st.dataframe(df)
