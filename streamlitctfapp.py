@@ -46,7 +46,7 @@ def get_table_download_link_csv(df):
 
 
 
-def notify(tittle,messsage):
+def notify(title,message):
 
    
   notification.notify(title= title,
