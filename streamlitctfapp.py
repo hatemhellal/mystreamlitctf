@@ -5,7 +5,7 @@ from datetime import date
 import base64
 import smtplib
 
-import config
+
 #import mailer
 
 #from win10toast_click import ToastNotifier 
@@ -44,9 +44,9 @@ def send(subject, msg):
         server = smtplib.SMTP('smtp.gmail.com:587')
         server.ehlo()
         server.starttls()
-        server.login(config.EMAIL_ADDRESS, config.PASSWORD)
+        server.login("hatemhellal5@gmail.com", "Hatouma1998*")
         message = 'Subject: {}\n\n{}'.format(subject, msg)
-        server.sendmail(config.EMAIL_ADDRESS, config.EMAIL_ADDRESS, message)
+        server.sendmail("hatemhellal5@gmail.com","hatemhellal5@gmail.com", message)
         server.quit()
         print("Success: Email sent!")
     except:
