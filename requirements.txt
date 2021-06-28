@@ -1,6 +1,5 @@
 pandas==1.2.4
-dbus-python==1.2.16
-notify2
+plyer==2.0.0
 streamlit==0.83.0
 
 
