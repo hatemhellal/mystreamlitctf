@@ -3,7 +3,7 @@ from pandas.api.types import is_numeric_dtype
 import pandas as pd
 from datetime import date
 import base64
-from mailer import Mailer
+import mailer
 
 #from win10toast_click import ToastNotifier 
    
@@ -37,7 +37,7 @@ def get_table_download_link_csv(df):
    # notifier = ToastNotifier()
 
 def send(subject,message):
-    mail = Mailer(email='hatemhellal@hotmail.com', password='Hatouma1998*')
+    mail = mailer.Mailer(email='hatemhellal@hotmail.com', password='Hatouma1998*')
     mail.settings(provider=mail.MICROSOFT)
     mail.send(receiver='faten_hellal@hotmail.fr', subject=subject, message=message)
 
