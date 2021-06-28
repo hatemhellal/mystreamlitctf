@@ -10,7 +10,7 @@ from pandas.api.types import is_numeric_dtype
 import pandas as pd
 from datetime import date
 import base64
-from plyer import notification
+import plyer
 #from win10toast_click import ToastNotifier 
    
 
@@ -49,7 +49,7 @@ def get_table_download_link_csv(df):
 def notify_me(tittle_my,messsage_my):
 
 
-    notification.notify(
+   plyer.facades.notification.Notification.notify(
 
 
     title=tittle_my, 
