@@ -10,7 +10,7 @@ from pandas.api.types import is_numeric_dtype
 import pandas as pd
 from datetime import date
 import base64
-from plyer import notification as n
+from plyer import notification 
 #from win10toast_click import ToastNotifier 
    
 
@@ -46,20 +46,14 @@ def get_table_download_link_csv(df):
 
 
 
-def notify_me(tittle_my,messsage_my):
+def notify(tittle,messsage):
 
    
-   n.notify(
-
-
-    title=tittle_my, 
-
-
-    message=messsage_my,  
-
-
-    app_icon=None,
-     timeout=2 )
+  notification.notify(title= title,
+                    message= message,
+                    app_icon = None,
+                    timeout= 10,
+                    toast=False)
 def filterdate(df,start,end):
     mask = (df["date de depart"] >= start) & (df["date d'expiration"] <= end)
     return df.loc[mask]
@@ -145,7 +139,7 @@ if st.checkbox("filtrer"):
 if st.sidebar.button("notify"):
     for i in range(len(df["date d'expiration"])):
         if df["date d'expiration"][i]==date.today():
-            notify_me('important',df["description"][i])
+            notify('important',df["description"][i])
                 
         
 st.dataframe(df)
