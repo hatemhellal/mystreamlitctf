@@ -3,7 +3,10 @@ from pandas.api.types import is_numeric_dtype
 import pandas as pd
 from datetime import date
 import base64
-import mailer
+import smtplib
+
+import config
+#import mailer
 
 #from win10toast_click import ToastNotifier 
    
@@ -36,10 +39,18 @@ def get_table_download_link_csv(df):
 #def send(title,message):
    # notifier = ToastNotifier()
 
-def send(subject,message):
-    mail = mailer.Mailer(email='hatemhellal@hotmail.com', password='Hatouma1998*')
-    mail.settings(provider=mail.MICROSOFT)
-    mail.send(receiver='faten_hellal@hotmail.fr', subject=subject, message=message)
+def send(subject, msg):
+    try:
+        server = smtplib.SMTP('smtp.gmail.com:587')
+        server.ehlo()
+        server.starttls()
+        server.login(config.EMAIL_ADDRESS, config.PASSWORD)
+        message = 'Subject: {}\n\n{}'.format(subject, msg)
+        server.sendmail(config.EMAIL_ADDRESS, config.EMAIL_ADDRESS, message)
+        server.quit()
+        print("Success: Email sent!")
+    except:
+        print("Email failed to send.")
 
 
 
