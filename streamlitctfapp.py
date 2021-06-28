@@ -41,12 +41,12 @@ def get_table_download_link_csv(df):
 
 def send(subject, msg):
     try:
-        server = smtplib.SMTP('smtp.gmail.com:587')
+        server = smtplib.SMTP('smtp-mail.outlook.com',587)
         server.ehlo()
         server.starttls()
-        server.login("hatemhellal5@gmail.com", "Hatouma1998*")
+        server.login("hatemhellal@hotmail.com", "Hatouma1998*")
         message = 'Subject: {}\n\n{}'.format(subject, msg)
-        server.sendmail("hatemhellal5@gmail.com","hatemhellal5@gmail.com", message)
+        server.sendmail("hatemhellal@hotmail.com", "hatemhellal5@gmail.com", message)
         server.quit()
         print("Success: Email sent!")
     except:
