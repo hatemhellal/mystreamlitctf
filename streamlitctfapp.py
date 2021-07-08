@@ -115,6 +115,8 @@ if st.checkbox("remplace"):
                         for j in range(len(get_data()[ligne])):
                             if columns=="nom de contrat":
                                 get_data()[ligne].update({"nom de contrat":new_val})
+                             if columns=="avocat":
+                                get_data()[ligne].update({"avocat":new_val})
                             elif columns=="date de depart":
                                 get_data()[ligne].update({"date de depart":new_val})
                             elif columns=="date d'expiration":
