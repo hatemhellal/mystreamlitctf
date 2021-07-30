@@ -70,8 +70,8 @@ def icon(icon_name):
 
 #############################
 def app():
-   local_css("./style.css")
-   remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')
+    local_css("./style.css")
+    remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')
     st.title("قضايا ctf")
     st.header("حاتم هلال")
     avocat=st.sidebar.text_input("المستشار القانوني")
