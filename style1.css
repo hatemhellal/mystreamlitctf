@@ -7,11 +7,11 @@ body {
     background-color: yellow;
     color: black;
     border-radius: 50%;
-    height: 6em;
-    width: 6em;
+    height: 5em;
+    width: 5em;
 }
 
 .stTextInput>div>div>input {
     color: blue;
-background-color: blue;
+background-color: yellow;
 }
