@@ -38,12 +38,13 @@ def remote_css(url):
 def icon(icon_name):
     st.markdown(f'<i class="material-icons">{icon_name}</i>', unsafe_allow_html=True)
 
-local_css("./style1.css")
-remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')
 
 
 #############################
 def app():
+    
+    local_css("./style1.css")
+    remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')
     st.title("عقود ctf")
     st.header("حاتم هلال")
     prix=st.sidebar.text_input("سعر")
