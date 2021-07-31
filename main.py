@@ -12,11 +12,11 @@ from SessionState import get
 
 session_state = get(password='')
 
-if session_state.password != 'hatem':
+if session_state.password != 'ctf':
     pwd_placeholder = st.sidebar.empty()
     pwd = pwd_placeholder.text_input("Password:", value="", type="password")
     session_state.password = pwd
-    if session_state.password == 'hatem':
+    if session_state.password == 'ctf':
         pwd_placeholder.empty()
         PAGES = {"قضايا": aff,"عقود": cont }
         st.sidebar.title('Navigation')
